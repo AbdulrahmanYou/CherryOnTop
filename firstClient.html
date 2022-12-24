@@ -78,9 +78,10 @@
         }, function(){
             $(this).addClass("mainimg");
         })
-        $(".landingimages").on('touchstart click', function(){
+        $(".landingimages").on('touchstart', function(){
             $(this).removeClass("mainimg");
-        }, function(){
+        })
+        $(".landingimages").on('touchend', function(){
             $(this).addClass("mainimg");
         })
     </script>
