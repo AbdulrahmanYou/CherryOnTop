@@ -78,7 +78,7 @@
         }, function(){
             $(this).addClass("mainimg");
         })
-        $(".landingimages").scroll(function(){
+        $(".landingimages").on('touchstart click', function(){
             $(this).removeClass("mainimg");
         }, function(){
             $(this).addClass("mainimg");
