@@ -183,16 +183,27 @@
         }, function(){
             $(this).addClass("mainimg");
         })
-        $(".landingimages").click(function(){
-            $(this).removeClass("mainimg");
-        })
-        $(".landingimages").on('touchstart', function(){
-            $(this).removeClass("mainimg");
-        })
-        $(".landingimages").on('touchend', function(){
-            if(!$(this).data("clicked"))
+        $(".landingimages").on('touchstart touchend click', function(){
+            if(event.type == "click"){
+                $(this).off('touchend');
+                $(this).removeClass("mainimg");
+            }
+            else if(event.type == "touchstart")
+                $(this).removeClass("mainimg");
+            else{
                 $(this).addClass("mainimg");
+            }
         })
+        // $(".landingimages").click(function(){
+        //     $(this).removeClass("mainimg");
+        // })
+        // $(".landingimages").on('touchstart', function(){
+        //     $(this).removeClass("mainimg");
+        // })
+        // $(".landingimages").on('touchend', function(){
+        //     if(!$(this).data("clicked"))
+        //         $(this).addClass("mainimg");
+        // })
     </script>
 </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
