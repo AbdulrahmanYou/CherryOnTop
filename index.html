@@ -80,7 +80,8 @@
             $(this).removeClass("mainimg");
         })
         $(".landingimages").on('touchend', function(){
-            $(this).addClass("mainimg");
+            if(!$(this).data("clicked"))
+                $(this).addClass("mainimg");
         })
     </script>
 </div>
